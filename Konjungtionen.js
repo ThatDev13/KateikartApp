@@ -31,9 +31,17 @@ const sampleCards = [
     { question: 'Zu welchem Adverbialsatz gehört die Konjunktion "welcher"?', answer: 'Relativsatz'},
 ];
 
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
 function getCardsFromLocalStorage() {
-        cards = sampleCards;
-        localStorage.setItem('flashcards', JSON.stringify(cards));
+    cards = sampleCards;
+    shuffleArray(cards); // Shuffle the cards
+    localStorage.setItem('flashcards', JSON.stringify(cards));
 }
 
 function showCard() {
