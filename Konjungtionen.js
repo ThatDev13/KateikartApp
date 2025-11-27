@@ -1,5 +1,5 @@
 const cards = [
-    { question: 'Zu welchem Adverbialsatz gehört die Konjunktion "sofern"?', answer: 'Konditionalsatz' },
+    { question: 'Zu welchem Adverbialsatz gehört die Konjunktion "sodass"?', answer: 'Konsekutivsatz'},
     { question: 'Zu welchem Adverbialsatz gehört die Konjunktion "bevor"?', answer: 'Temporalsatz' },
     { question: 'Zu welchem Adverbialsatz gehört die Konjunktion "welche"?', answer: 'Relativsatz' },
     { question: 'Zu welchem Adverbialsatz gehört die Konjunktion "weil"?', answer: 'Kausalsatz'},

@@ -9,7 +9,9 @@ const urlsToCache = [
   'hilfe.html',
   'infos.html',
   'new.html',
-  'patchnotes.html'
+  'patchnotes.html',
+  'offline.html',
+  'offline.js'
 ];
 
 self.addEventListener('install', event => {
@@ -33,4 +35,17 @@ self.addEventListener('fetch', event => {
       }
     )
   );
+});
+
+self.addEventListener('message', event => {
+  if (event.data.action === 'cache-topic') {
+    const topic = event.data.topic;
+    event.waitUntil(
+      caches.open(CACHE_NAME)
+        .then(cache => {
+          console.log(`Caching topic: ${topic}`);
+          return cache.add(`${topic}.html`);
+        })
+    );
+  }
 });
